@@ -1,0 +1,121 @@
+#!/usr/bin/env python3
+
+"""
+Program: File Crypter
+Description: CLI tool encrypts and decrypts files using Fernet symmetric encryption
+Author: batubyte
+Date: 2025-06-18
+"""
+
+from cryptography.fernet import Fernet
+import argparse
+import sys
+
+PROGRAM = "File Crypter"
+DESCRIPTION = "CLI tool encrypts and decrypts files using Fernet symmetric encryption"
+AUTHOR = "batubyte"
+VERSION = "0.1.0"
+
+
+def generate_key(path="key.key"):
+    key = Fernet.generate_key()
+    with open(path, "wb") as f:
+        f.write(key)
+    print(f"[+] Key saved to {path}")
+
+
+def load_key(path="key.key") -> Fernet:
+    with open(path, "rb") as f:
+        key = f.read()
+    return Fernet(key)
+
+
+def encrypt_file(input_file, output_file, fernet: Fernet):
+    if os.path.exists(output_file):
+        confirm = input(f"[!] {output_file} already exists. Overwrite? [y/N]: ").lower()
+        if confirm != "y":
+            print("[!] Encryption cancelled.")
+            return
+
+    with open(input_file, "rb") as f:
+        data = f.read()
+    encrypted = fernet.encrypt(data)
+    with open(output_file, "wb") as f:
+        f.write(encrypted)
+    print(f"[+] Encrypted file saved to {output_file}")
+
+
+def decrypt_file(input_file, output_file, fernet: Fernet):
+    if os.path.exists(output_file):
+        confirm = input(f"[!] {output_file} already exists. Overwrite? [y/N]: ").lower()
+        if confirm != "y":
+            print("[!] Decryption cancelled.")
+            return
+
+    with open(input_file, "rb") as f:
+        encrypted = f.read()
+    decrypted = fernet.decrypt(encrypted)
+    with open(output_file, "wb") as f:
+        f.write(decrypted)
+    print(f"[+] Decrypted file saved to {output_file}")
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        prog=PROGRAM,
+        description=DESCRIPTION,
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument(
+        "-v", "--version", action="version", version=f"%(prog)s {VERSION}"
+    )
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    # generate key
+    parser_key = subparsers.add_parser("genkey", help="Generate a new key")
+    parser_key.add_argument(
+        "-k", "--key", default="key.key", help="Where to save the key file"
+    )
+
+    # encrypt
+    parser_encrypt = subparsers.add_parser("encrypt", help="Encrypt a file")
+    parser_encrypt.add_argument(
+        "-f", "--file", required=True, help="Input file to encrypt"
+    )
+    parser_encrypt.add_argument(
+        "-o", "--out", default="file.enc", help="Encrypted output file"
+    )
+    parser_encrypt.add_argument(
+        "-k", "--key", default="key.key", help="Key file to use"
+    )
+
+    # decrypt
+    parser_decrypt = subparsers.add_parser("decrypt", help="Decrypt a file")
+    parser_decrypt.add_argument(
+        "-f", "--file", required=True, help="Encrypted input file"
+    )
+    parser_decrypt.add_argument(
+        "-o", "--out", default="file.dec", help="Decrypted output file"
+    )
+    parser_decrypt.add_argument(
+        "-k", "--key", default="key.key", help="Key file to use"
+    )
+
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+
+    if args.command == "genkey":
+        generate_key(args.key)
+    else:
+        fernet = load_key(args.key)
+        if args.command == "encrypt":
+            encrypt_file(args.file, args.out, fernet)
+        elif args.command == "decrypt":
+            decrypt_file(args.file, args.out, fernet)
+
+
+if __name__ == "__main__":
+    main()
