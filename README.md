@@ -2,7 +2,7 @@
 ![image](https://github.com/user-attachments/assets/3ea1856e-a8fb-459d-b2fc-8bf9b5a41547)
 
 ## 🪟 Windows
-### 📦 Installation
+### Installation
 ```batch
 ::Install WinGet
 ::Do Win + X -> A
@@ -26,7 +26,7 @@ uv sync & uv run file-crypter.py
 ```
 
 ## 🐧 Linux (Ubuntu/Debian)
-### 📦 Installation
+### Installation
 ```bash
 sudo apt update && sudo apt install -y git
 curl -LsSf https://astral.sh/uv/install.sh | sh
