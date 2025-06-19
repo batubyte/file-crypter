@@ -1,19 +1,12 @@
 #!/usr/bin/env python3
 
-"""
-Program: File Crypter
-Description: CLI tool encrypts and decrypts files using Fernet symmetric encryption
-Author: batubyte
-Date: 2025-06-18
-"""
-
 from cryptography.fernet import Fernet
 import argparse
 import sys
+import os
 
 PROGRAM = "File Crypter"
-DESCRIPTION = "CLI tool encrypts and decrypts files using Fernet symmetric encryption"
-AUTHOR = "batubyte"
+DESCRIPTION = "Encrypts and decrypts files using Fernet symmetric encryption"
 VERSION = "0.1.0"
 
 
@@ -24,16 +17,16 @@ def generate_key(path="key.key"):
     print(f"[+] Key saved to {path}")
 
 
-def load_key(path="key.key") -> Fernet:
+def load_key(path="key.key"):
     with open(path, "rb") as f:
         key = f.read()
     return Fernet(key)
 
 
-def encrypt_file(input_file, output_file, fernet: Fernet):
+def encrypt_file(input_file, output_file, fernet):
     if os.path.exists(output_file):
         confirm = input(f"[!] {output_file} already exists. Overwrite? [y/N]: ").lower()
-        if confirm != "y":
+        if confirm not in ("y", "yes"):
             print("[!] Encryption cancelled.")
             return
 
@@ -45,10 +38,10 @@ def encrypt_file(input_file, output_file, fernet: Fernet):
     print(f"[+] Encrypted file saved to {output_file}")
 
 
-def decrypt_file(input_file, output_file, fernet: Fernet):
+def decrypt_file(input_file, output_file, fernet):
     if os.path.exists(output_file):
         confirm = input(f"[!] {output_file} already exists. Overwrite? [y/N]: ").lower()
-        if confirm != "y":
+        if confirm not in ("y", "yes"):
             print("[!] Decryption cancelled.")
             return
 
@@ -61,11 +54,7 @@ def decrypt_file(input_file, output_file, fernet: Fernet):
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(
-        prog=PROGRAM,
-        description=DESCRIPTION,
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-    )
+    parser = argparse.ArgumentParser(prog=PROGRAM, description=DESCRIPTION)
     parser.add_argument(
         "-v", "--version", action="version", version=f"%(prog)s {VERSION}"
     )
