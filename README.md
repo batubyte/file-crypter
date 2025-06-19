@@ -26,13 +26,13 @@ uv sync & uv run file-crypter.py
 ```
 
 ## 🐧 Linux (Ubuntu/Debian)
-#### 📦 Installation
+### 📦 Installation
 ```bash
 sudo apt update && sudo apt install -y git
 curl -LsSf https://astral.sh/uv/install.sh | sh
 rm -rf ~/Documents/file-crypter && git clone https://github.com/batubyte/file-crypter.git ~/Documents/file-crypter
 ```
-### ▶️ Run
+#### ▶️ Run
 ```bash
 cd ~/Documents/file-crypter
 uv sync && uv run file-crypter.py
