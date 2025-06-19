@@ -18,7 +18,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 :: Install project
 rmdir /s /q "%USERPROFILE%\Documents\file-crypter" & git clone https://github.com/batubyte/file-crypter "%USERPROFILE%\Documents\file-crypter"
 ```
-#### ▶️ Run
+#### ▶ Run
 ```batch
 ::Do Win + R -> cmd
 cd %USERPROFILE%\Documents\file-crypter
@@ -32,7 +32,7 @@ sudo apt update && sudo apt install -y git
 curl -LsSf https://astral.sh/uv/install.sh | sh
 rm -rf ~/Documents/file-crypter && git clone https://github.com/batubyte/file-crypter.git ~/Documents/file-crypter
 ```
-#### ▶️ Run
+#### ▶ Run
 ```bash
 cd ~/Documents/file-crypter
 uv sync && uv run file-crypter.py
