@@ -28,12 +28,14 @@ rmdir /s /q "%USERPROFILE%\Documents\file-crypter" & git clone https://github.co
 ## ⚡ Run
 ### Linux
 ```bash
-cd ~/Documents/file-crypter && uv sync && uv run file_crypter.py -h
+cd ~/Documents/file-crypter
+uv sync && uv run file_crypter.py -h
 ```
 ### Windows
 ```batch
 :: do Win + R -> cmd
-cd %USERPROFILE%\Documents\file-crypter & uv sync & uv run file_crypter.py -h
+cd %USERPROFILE%\Documents\file-crypter
+uv sync & uv run file_crypter.py -h
 ```
 
 ## 📚 Fernet documentation
