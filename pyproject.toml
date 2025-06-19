@@ -5,7 +5,7 @@ authors = [{ name="batubyte" }]
 
 description = "A file encrypter and decrypter using Fernet symmetric encryption"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.8"
 
 dependencies = ["cryptography>=45.0.4"]
 
