@@ -1,8 +1,14 @@
 # File Crypter
 ![image](https://github.com/user-attachments/assets/3ea1856e-a8fb-459d-b2fc-8bf9b5a41547)
 
-## 🪟 Windows
-### Installation
+## 📦 Install
+### Linux (Ubuntu/Debian)
+```bash
+sudo apt update && sudo apt install -y git
+curl -LsSf https://astral.sh/uv/install.sh | sh
+rm -rf ~/Documents/file-crypter && git clone https://github.com/batubyte/file-crypter.git ~/Documents/file-crypter
+```
+### Windows
 ```batch
 ::Install WinGet
 ::Do Win + X -> A
@@ -16,24 +22,18 @@ winget install --id=Git.Git -e --accept-package-agreements --accept-source-agree
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex" && setx Path=%USERPROFILE%\.local\bin;%Path%
 
 :: Install project
-rmdir /s /q "%USERPROFILE%\Documents\file-crypter" & git clone https://github.com/batubyte/file-crypter "%USERPROFILE%\Documents\file-crypter"
-```
-### Run
-```batch
-::Do Win + R -> cmd
-cd %USERPROFILE%\Documents\file-crypter
-uv sync & uv run file-crypter.py
+rmdir /s /q "%USERPROFILE%\Documents\file-crypter" & git clone https://github.com/batubyte/file-crypter.git "%USERPROFILE%\Documents\file-crypter"
 ```
 
-## 🐧 Linux (Ubuntu/Debian)
-### Installation
-```bash
-sudo apt update && sudo apt install -y git
-curl -LsSf https://astral.sh/uv/install.sh | sh
-rm -rf ~/Documents/file-crypter && git clone https://github.com/batubyte/file-crypter.git ~/Documents/file-crypter
-```
-### Run
+## ⚡ Run
+### Linux
 ```bash
 cd ~/Documents/file-crypter
-uv sync && uv run file-crypter.py
+uv sync && uv run file_crypter.py
+```
+### Windows
+```batch
+::Win + R -> cmd
+cd %USERPROFILE%\Documents\file-crypter
+uv sync & uv run file_crypter.py
 ```
