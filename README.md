@@ -37,3 +37,6 @@ uv sync && uv run file_crypter.py
 cd %USERPROFILE%\Documents\file-crypter
 uv sync & uv run file_crypter.py
 ```
+
+## 📚 Fernet documentation
+https://cryptography.io/en/latest/fernet/
