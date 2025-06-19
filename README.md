@@ -21,7 +21,7 @@ winget install --id=Git.Git -e --accept-package-agreements --accept-source-agree
 ::Do Win + R -> cmd
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex" && setx Path=%USERPROFILE%\.local\bin;%Path%
 
-:: Install project
+:: Install repositories
 rmdir /s /q "%USERPROFILE%\Documents\file-crypter" & git clone https://github.com/batubyte/file-crypter.git "%USERPROFILE%\Documents\file-crypter"
 ```
 
