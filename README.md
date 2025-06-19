@@ -11,14 +11,14 @@ rm -rf ~/Documents/file-crypter && git clone https://github.com/batubyte/file-cr
 ### Windows
 ```batch
 :: WinGet
-::Do Win + X -> A
+:: Do Win + X -> A
 Start-BitsTransfer -Source https://aka.ms/getwinget -Destination AppInstaller.msixbundle; Add-AppxPackage .\AppInstaller.msixbundle; Remove-Item .\AppInstaller.msixbundle
 
 :: Git
 winget install --id=Git.Git -e --accept-package-agreements --accept-source-agreements
 
 :: uv
-::Do Win + R -> cmd
+:: Do Win + R -> cmd
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex" && setx Path=%USERPROFILE%\.local\bin;%Path%
 
 :: Repository
@@ -32,7 +32,7 @@ cd ~/Documents/file-crypter && uv sync && uv run file_crypter.py -h
 ```
 ### Windows
 ```batch
-::Do Win + R -> cmd
+:: Do Win + R -> cmd
 cd %USERPROFILE%\Documents\file-crypter & uv sync & uv run file_crypter.py -h
 ```
 
