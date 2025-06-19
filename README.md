@@ -1,4 +1,4 @@
-# File Crypter
+# 🔐 File Crypter
 ![image](https://github.com/user-attachments/assets/3ea1856e-a8fb-459d-b2fc-8bf9b5a41547)
 
 ## 📦 Install
