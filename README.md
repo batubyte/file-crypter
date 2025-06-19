@@ -10,18 +10,18 @@ rm -rf ~/Documents/file-crypter && git clone https://github.com/batubyte/file-cr
 ```
 ### Windows
 ```batch
-::Install WinGet
+:: WinGet
 ::Do Win + X -> A
 Start-BitsTransfer -Source https://aka.ms/getwinget -Destination AppInstaller.msixbundle; Add-AppxPackage .\AppInstaller.msixbundle; Remove-Item .\AppInstaller.msixbundle
 
-::Install Git
+:: Git
 winget install --id=Git.Git -e --accept-package-agreements --accept-source-agreements
 
-::Install uv
+:: uv
 ::Do Win + R -> cmd
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex" && setx Path=%USERPROFILE%\.local\bin;%Path%
 
-:: Install repositories
+:: Repository
 rmdir /s /q "%USERPROFILE%\Documents\file-crypter" & git clone https://github.com/batubyte/file-crypter.git "%USERPROFILE%\Documents\file-crypter"
 ```
 
