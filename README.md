@@ -1,5 +1,5 @@
 # File Crypter
-![image](https://github.com/user-attachments/assets/8a141ee4-8b0e-4fcc-9a6b-06610a32ecf8)
+![image](https://github.com/user-attachments/assets/3ea1856e-a8fb-459d-b2fc-8bf9b5a41547)
 
 ## Installation
 ### Linux (Ubuntu/Debian)
