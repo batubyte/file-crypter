@@ -2,12 +2,20 @@
 
 from cryptography.fernet import Fernet
 import argparse
+import logging
 import sys
 import os
 
 PROGRAM = "File Crypter"
 DESCRIPTION = "Encrypts and decrypts files using Fernet symmetric encryption"
 VERSION = "0.1.0"
+
+logging.basicConfig(
+    filename="output.log",
+    filemode="w",
+    level=logging.ERROR,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
 
 
 def generate_key(path="key.key"):
@@ -107,4 +115,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.exit(130)
+    except Exception:
+        logging.critical("Unhandled exception occurred", exc_info=True)
+        sys.exit(1)
