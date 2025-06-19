@@ -7,7 +7,7 @@ import sys
 import os
 
 PROGRAM = "File Crypter"
-DESCRIPTION = "Encrypts and decrypts files using Fernet symmetric encryption"
+DESCRIPTION = "A file encrypter and decrypter using Fernet symmetric encryption"
 VERSION = "0.1.0"
 
 logging.basicConfig(

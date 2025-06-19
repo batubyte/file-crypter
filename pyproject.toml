@@ -3,7 +3,7 @@ name = "file-crypter"
 version = "0.1.0"
 authors = [{ name="batubyte" }]
 
-description = "Encrypts and decrypts files using Fernet symmetric encryption"
+description = "A file encrypter and decrypter using Fernet symmetric encryption"
 readme = "README.md"
 requires-python = ">=3.13"
 
