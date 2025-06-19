@@ -5,8 +5,8 @@
 ### Linux (Ubuntu/Debian)
 ```bash
 sudo apt update && sudo apt install -y git
-curl -LsSf https://astral.sh/uv/install.sh | sh
-rm -rf ~/Documents/file-crypter && git clone https://github.com/batubyte/file-crypter.git ~/Documents/file-crypter
+curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin:$PATH"
+rm -rf ~/Documents/file-crypter && git clone https://github.com/batubyte/file-crypter.git ~/Documents/file-crypter && chmod +x ~/Documents/file-crypter/file_crypter.py
 ```
 ### Windows
 ```batch
@@ -28,14 +28,12 @@ rmdir /s /q "%USERPROFILE%\Documents\file-crypter" & git clone https://github.co
 ## ⚡ Run
 ### Linux
 ```bash
-cd ~/Documents/file-crypter
-uv sync && uv run file_crypter.py
+cd ~/Documents/file-crypter && uv sync && uv run file_crypter.py -h
 ```
 ### Windows
 ```batch
-::Win + R -> cmd
-cd %USERPROFILE%\Documents\file-crypter
-uv sync & uv run file_crypter.py
+::Do Win + R -> cmd
+cd %USERPROFILE%\Documents\file-crypter & uv sync & uv run file_crypter.py -h
 ```
 
 ## 📚 Fernet documentation
