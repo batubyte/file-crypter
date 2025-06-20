@@ -11,7 +11,7 @@ file-crypter
 
 ## ✨ Features
 ```py
-> file_crypter genkey -k C:\secret.key
+> file_crypter genkey -o C:\secret.key
 > file_crypter encrypt -f file.dat -o file.enc -k C:\secret.key
 > file_crypter decrypt -f file.enc -o file.dec -k C:\secret.key
 ```
