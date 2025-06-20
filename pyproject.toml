@@ -1,12 +1,12 @@
 [project]
 name = "file-crypter"
-version = "0.1.0"
+version = "0.1.1"
 authors = [{ name="batubyte" }]
 description = "A file encrypter and decrypter using Fernet symmetric encryption"
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
-dependencies = ["cryptography>=45.0.4"]
+dependencies = ["rich", "cryptography"]
 
 [project.scripts]
 file_crypter = "file_crypter:main"
