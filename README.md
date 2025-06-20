@@ -10,9 +10,11 @@ file-crypter
 ```
 
 ## ✨ Features
+```py
 > file_crypter genkey -k C:\example.key
 > file_crypter encrypt -f file.dat -o file.enc -k C:\example.key
 > file_crypter decrypt -f file.enc -o file.dec -k C:\example.key
+```
 
 ## 📄 Fernet documentation
 https://cryptography.io/en/latest/fernet/
