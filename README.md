@@ -9,7 +9,7 @@ pipx install git+https://github.com/batubyte/file-crypter
 file-crypter
 ```
 
-## Features
+## ✨ Features
 ```py
 > file_crypter genkey -k C:\example.key
 > file_crypter encrypt -f file.dat -o file.enc -k C:\example.key
