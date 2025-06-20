@@ -6,7 +6,7 @@
 pipx install git+https://github.com/batubyte/file-crypter
 ```
 ```bash
-file_crypter
+file-crypter
 ```
 
 ## Features
