@@ -13,4 +13,3 @@ file_crypter = "file_crypter:main"
 
 [project.urls]
 Github = "https://github.com/batubyte/file-crypter"
-Discord = "https://discord.gg/6H6T8aNbC6"
