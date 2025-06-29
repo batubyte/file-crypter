@@ -8,7 +8,7 @@ import argparse
 import sys
 import os
 
-PROGRAM = "file_crypter"
+PROGRAM = "file-crypter"
 DESCRIPTION = "A file encrypter and decrypter using Fernet symmetric encryption"
 VERSION = "0.1.1"
 
