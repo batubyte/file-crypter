@@ -83,25 +83,25 @@ def parse_args():
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # generate key
-    parser_key = subparsers.add_parser("genkey", help="Generate a new key")
+    parser_key = subparsers.add_parser("genkey", help="generate a new key")
     parser_key.add_argument(
-        "-o", "--out", default="secret.key", help="Where to save the key file"
+        "-o", "--out", default="secret.key", help="where to save the key file"
     )
 
     # encrypt
-    parser_encrypt = subparsers.add_parser("encrypt", help="Encrypt a file")
+    parser_encrypt = subparsers.add_parser("encrypt", help="encrypt a file")
     parser_encrypt.add_argument(
-        "-f", "--file", required=True, help="Input file to encrypt"
+        "-f", "--file", required=True, help="input file to encrypt"
     )
     parser_encrypt.add_argument(
-        "-o", "--out", default="file.enc", help="Encrypted output file"
+        "-o", "--out", default="file.enc", help="encrypted output file"
     )
     parser_encrypt.add_argument(
-        "-k", "--key", default="secret.key", help="Key file to use"
+        "-k", "--key", default="secret.key", help="key file to use"
     )
 
     # decrypt
-    parser_decrypt = subparsers.add_parser("decrypt", help="Decrypt a file")
+    parser_decrypt = subparsers.add_parser("decrypt", help="decrypt a file")
     parser_decrypt.add_argument(
         "-f", "--file", required=True, help="encrypted input file"
     )
