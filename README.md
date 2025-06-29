@@ -1,5 +1,5 @@
 # 🔐 File Crypter
-![image](https://github.com/user-attachments/assets/9da68520-6773-4441-9b7b-5a33ae2f0471)
+![image](https://github.com/user-attachments/assets/03e5e3b2-4752-46a5-b4cf-e3744a4d2001)
 
 ## 📦 Installation
 ```bash
