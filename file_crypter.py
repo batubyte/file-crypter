@@ -103,13 +103,13 @@ def parse_args():
     # decrypt
     parser_decrypt = subparsers.add_parser("decrypt", help="Decrypt a file")
     parser_decrypt.add_argument(
-        "-f", "--file", required=True, help="Encrypted input file"
+        "-f", "--file", required=True, help="encrypted input file"
     )
     parser_decrypt.add_argument(
-        "-o", "--out", default="file.dec", help="Decrypted output file"
+        "-o", "--out", default="file.dec", help="decrypted output file"
     )
     parser_decrypt.add_argument(
-        "-k", "--key", default="secret.key", help="Key file to use"
+        "-k", "--key", default="secret.key", help="key file to use"
     )
     
     if len(sys.argv) == 1 or '--help' in sys.argv or '-h' in sys.argv:
