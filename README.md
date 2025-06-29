@@ -16,5 +16,5 @@ file-crypter
 > file-crypter decrypt -f file.enc -o file.dec -k C:\secret.key
 ```
 
-## 📄 Fernet documentation
-https://cryptography.io/en/latest/fernet/
+## 📄 Documentation
+* [Fernet](https://cryptography.io/en/latest/fernet)
