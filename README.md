@@ -15,6 +15,3 @@ file-crypter
 > file-crypter encrypt -f file.dat -o file.enc -k C:\secret.key
 > file-crypter decrypt -f file.enc -o file.dec -k C:\secret.key
 ```
-
-## 📄 Documentation
-* [Fernet](https://cryptography.io/en/latest/fernet)
