@@ -1,10 +1,10 @@
 > [!NOTE]
 > Update coming soon
 
-# 🔐 File Crypter
+## 🔐 File Crypter
 ![image](https://github.com/user-attachments/assets/febcb6d7-6d21-42e9-a8f4-65286aad11e9)
 
-## 📦 Installation
+### 📦 Installation
 ```bash
 pipx install git+https://github.com/batubyte/file-crypter
 ```
@@ -12,7 +12,7 @@ pipx install git+https://github.com/batubyte/file-crypter
 file-crypter
 ```
 
-## ✨ Features
+### ✨ Features
 ```py
 > file-crypter genkey -o C:\secret.key
 > file-crypter encrypt -f file.dat -o file.enc -k C:\secret.key
