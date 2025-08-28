@@ -14,7 +14,14 @@ file-crypter
 
 ### ✨ Features
 ```py
-> file-crypter genkey -o C:\secret.key
-> file-crypter encrypt -f file.dat -o file.enc -k C:\secret.key
-> file-crypter decrypt -f file.enc -o file.dec -k C:\secret.key
+# Generate key
+> file-crypter generate fernet.key
+
+# Crypt file
+> file-crypter -k fernet.key --encrypt --file my_file.txt
+> file-crypter -k fernet.key --decrypt --file my_file.txt.encrypted
+
+# Crypt directory
+> file-crypter -k fernet.key --encrypt --dir MyFolder
+> file-crypter -k fernet.key --decrypt --dir MyFolder
 ```
