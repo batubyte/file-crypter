@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 import argparse
+import os
+import platform
 import subprocess
 import sys
-import os
-from typing import Tuple
-import platform
 from pathlib import Path
+from typing import Tuple
 
 from cryptography.fernet import Fernet
 from rich.color import Color
@@ -28,7 +28,7 @@ def get_default_key_path():
     system = platform.system()
 
     if system == "Windows":
-        base = Path(os.getenv('APPDATA'))
+        base = Path(os.getenv("APPDATA"))
     elif system == "Darwin":
         base = Path.home() / "Library" / "Application Support"
     else:
@@ -93,7 +93,6 @@ def decrypt_file(input_path: str, key: bytes):
         input_file = original_path
 
     console.print(f"Decrypted: {input_file}")
-
 
 
 def process_directory(path: str, action: str, key: bytes):
@@ -172,13 +171,25 @@ class RichCLI:
 
 
 def main():
-    parser = argparse.ArgumentParser(prog=PROGRAM, description=DESCRIPTION, add_help=False)
+    parser = argparse.ArgumentParser(
+        prog=PROGRAM, description=DESCRIPTION, add_help=False
+    )
     parser.add_argument("-h", "--help", action="store_true", help="Show help message")
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     parser.add_argument("-u", "--update", action="store_true", help="Update program")
-    parser.add_argument("-g", "--generate", nargs="?", const=str(DEFAULT_KEY_PATH), help=f"Generate new key (Default: {DEFAULT_KEY_PATH})")
-    parser.add_argument("-e", "--encrypt", action="store_true", help="Encrypt file or directory")
-    parser.add_argument("-d", "--decrypt", action="store_true", help="Decrypt file or directory")
+    parser.add_argument(
+        "-g",
+        "--generate",
+        nargs="?",
+        const=str(DEFAULT_KEY_PATH),
+        help=f"Generate new key (Default: {DEFAULT_KEY_PATH})",
+    )
+    parser.add_argument(
+        "-e", "--encrypt", action="store_true", help="Encrypt file or directory"
+    )
+    parser.add_argument(
+        "-d", "--decrypt", action="store_true", help="Decrypt file or directory"
+    )
     parser.add_argument("-f", "--file", type=str, help="Path to file")
     parser.add_argument("-r", "--dir", type=str, help="Path to directory")
     parser.add_argument("-k", "--key", type=str, help="Path to key file")
@@ -195,14 +206,20 @@ def main():
 
     if args.update:
         subprocess.run(
-            ["pipx", "install", "--force", "git+https://github.com/batubyte/file-crypter"],
+            [
+                "pipx",
+                "install",
+                "--force",
+                "git+https://github.com/batubyte/file-crypter",
+            ],
             check=True,
         )
         return
 
-
     if args.generate is not None:
-        path = args.generate if isinstance(args.generate, str) else str(DEFAULT_KEY_PATH)
+        path = (
+            args.generate if isinstance(args.generate, str) else str(DEFAULT_KEY_PATH)
+        )
         key = generate_key()
         save_key(key, path)
         return
