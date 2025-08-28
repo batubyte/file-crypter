@@ -1,8 +1,5 @@
-> [!NOTE]
-> Update coming soon
-
 ## 🔐 File Crypter
-![image](https://github.com/user-attachments/assets/febcb6d7-6d21-42e9-a8f4-65286aad11e9)
+<img width="872" height="363" alt="image" src="https://github.com/user-attachments/assets/6766bf65-5b16-4ced-a916-2fa4d282506d" />
 
 ### 📦 Installation
 ```bash
@@ -15,13 +12,13 @@ file-crypter
 ### ✨ Features
 ```py
 # Generate key
-> file-crypter generate fernet.key
+> file-crypter generate C:\...\fernet.key
 
 # Crypt file
-> file-crypter -k fernet.key --encrypt --file my_file.txt
-> file-crypter -k fernet.key --decrypt --file my_file.txt.encrypted
+> file-crypter -k C:\...\fernet.key --encrypt --file my_file.txt
+> file-crypter -k C:\...\fernet.key --decrypt --file my_file.txt.encrypted
 
 # Crypt directory
-> file-crypter -k fernet.key --encrypt --dir MyFolder
-> file-crypter -k fernet.key --decrypt --dir MyFolder
+> file-crypter -k C:\...\fernet.key --encrypt --dir MyFolder
+> file-crypter -k C:\...\fernet.key --decrypt --dir MyFolder
 ```
