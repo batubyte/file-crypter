@@ -229,9 +229,6 @@ def main():
     else:
         if DEFAULT_KEY_PATH.exists():
             key = read_key(DEFAULT_KEY_PATH)
-        else:
-            console.print("[red]No key found. Generate one first using -g[/red]")
-            return
 
     if args.encrypt:
         if args.file:
