@@ -12,13 +12,13 @@ file-crypter
 ### ✨ Features
 ```py
 # Generate key
-> file-crypter generate C:\...\fernet.key
+> file-crypter --generate C:\...\fernet.key
 
 # Crypt file
-> file-crypter -k C:\...\fernet.key --encrypt --file my_file.txt
-> file-crypter -k C:\...\fernet.key --decrypt --file my_file.txt.encrypted
+> file-crypter --key C:\...\fernet.key --encrypt --file my_file.txt
+> file-crypter --key C:\...\fernet.key --decrypt --file my_file.txt.encrypted
 
 # Crypt directory
-> file-crypter -k C:\...\fernet.key --encrypt --dir MyFolder
-> file-crypter -k C:\...\fernet.key --decrypt --dir MyFolder
+> file-crypter --key C:\...\fernet.key --encrypt --dir MyFolder
+> file-crypter --key C:\...\fernet.key --decrypt --dir MyFolder
 ```
