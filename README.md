@@ -1,5 +1,5 @@
 > [!NOTE]
-> Update soon
+> update soon
 
 ## 🔐 File Crypter
 <img width="872" height="363" alt="image" src="https://github.com/user-attachments/assets/6766bf65-5b16-4ced-a916-2fa4d282506d" />
