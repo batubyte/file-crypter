@@ -28,3 +28,6 @@ file-crypter
 > file-crypter --key C:\...\fernet.key --encrypt --dir MyFolder
 > file-crypter --key C:\...\fernet.key --decrypt --dir MyFolder
 ```
+
+# Documentation
+https://cryptography.io/en/latest/fernet/
