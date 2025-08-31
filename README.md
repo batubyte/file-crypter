@@ -29,5 +29,5 @@ file-crypter
 > file-crypter --key C:\...\fernet.key --decrypt --dir MyFolder
 ```
 
-# Documentation
-https://cryptography.io/en/latest/fernet/
+# 📄 Documentation
+* [Fernet](https://cryptography.io/en/latest/fernet)
