@@ -15,7 +15,7 @@ file-crypter
 ### ✨ Features
 * 
 
-### Usage
+### 📝 Usage
 ```py
 # Generate key
 > file-crypter --generate C:\...\fernet.key
